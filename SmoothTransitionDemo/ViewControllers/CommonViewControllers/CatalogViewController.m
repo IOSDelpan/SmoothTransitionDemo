@@ -14,6 +14,7 @@ static const CGFloat TableViewHeadHeight = 40.0f;
 #import "CatalogViewController.h"
 #import "FirstSituationViewController.h"
 #import "SecondSituationViewController.h"
+#import "ThirdSituationViewController.h"
 
 @interface CatalogViewController ()
 {
@@ -33,9 +34,12 @@ static const CGFloat TableViewHeadHeight = 40.0f;
         
         chapters = @[ @{ @"Title" : @"情形一",
                          @"Contents" : @[ @"同步读取数据", @"异步读取数据" ] },
-                          
+                      
                       @{ @"Title" : @"情形二",
-                         @"Contents" : @[ @"默认加载UI", @"viewDidAppear时加载UI", @"在RunLoop下一次循环加载UI", @"定时器加载UI" ] } ];
+                         @"Contents" : @[ @"默认加载UI", @"viewDidAppear时加载UI", @"在RunLoop下一次循环加载UI", @"定时器加载UI", @"GCD嵌套加载UI" ] },
+                      
+                      @{ @"Title" : @"情形三",
+                         @"Contents" : @[ @"默认加载UI", @"截图加载UI" ] } ];
     }
     
     return self;
@@ -106,13 +110,17 @@ static const CGFloat TableViewHeadHeight = 40.0f;
     
     UIViewController *controller;
     
-    if (indexPath.section)
+    if (indexPath.section == 0)
+    {
+        controller = [FirstSituationViewController createWithAsyncLoadData:indexPath.row];
+    }
+    else if (indexPath.section == 1)
     {
         controller = [SecondSituationViewController createWithType:indexPath.row];
     }
     else
     {
-        controller = [FirstSituationViewController createWithAsyncLoadData:indexPath.row];
+        controller = [ThirdSituationViewController createWithType:indexPath.row];
     }
     
     [self.navigationController pushViewController:controller animated:YES];

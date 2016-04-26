@@ -33,12 +33,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [self setUpView];
-    [self setUpData];
+    [self loadSubViews];
+    [self loadDatas];
 }
 
 #pragma mark - UI
-- (void)setUpView
+- (void)loadSubViews
 {
     self.view.backgroundColor = [UIColor whiteColor];
     
@@ -54,7 +54,7 @@
 }
 
 #pragma mark - Data
-- (void)setUpData
+- (void)loadDatas
 {
     if (_async)
     {

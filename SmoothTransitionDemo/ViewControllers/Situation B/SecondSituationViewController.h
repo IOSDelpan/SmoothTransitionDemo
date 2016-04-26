@@ -11,13 +11,15 @@
 typedef NS_ENUM(NSInteger, SecondSituationLoadType)
 {
     /** 默认加载UI */
-    SecondSituationDefaultLoadType = 0,
+    SecondSituationLoadDefaultType = 0,
     /** viewDidAppear时加载UI */
-    SecondSituationViewDidAppearLoadType,
+    SecondSituationLoadViewDidAppearType,
     /** RunLoop下次循行加载UI */
-    SecondSituationNextLoopLoadType,
+    SecondSituationLoadNextLoopType,
     /** 定时器加载UI */
-    SecondSituationTimerLoadType
+    SecondSituationLoadTimerType,
+    /** GCD加载UI */
+    SecondSituationLoadGCDType
 };
 
 @interface SecondSituationViewController : UIViewController

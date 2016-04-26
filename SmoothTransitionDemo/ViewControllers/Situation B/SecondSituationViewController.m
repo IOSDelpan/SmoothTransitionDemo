@@ -16,6 +16,7 @@ static const NSInteger LabelSize = 15;
     UILabel *tipsLabel;
     
     CADisplayLink *timer;
+    
     /** 定时次数 */
     NSInteger timerIndex;
     
@@ -60,7 +61,7 @@ static const NSInteger LabelSize = 15;
 {
     [super viewDidAppear:animated];
     
-    if (_type == SecondSituationViewDidAppearLoadType)
+    if (_type == SecondSituationLoadViewDidAppearType)
     {
         [self loadAllLabels];
     }
@@ -72,7 +73,7 @@ static const NSInteger LabelSize = 15;
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-    if (_type == SecondSituationNextLoopLoadType || _type == SecondSituationViewDidAppearLoadType)
+    if (_type == SecondSituationLoadNextLoopType || _type == SecondSituationLoadViewDidAppearType)
     {
         tipsLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, iPhoneWidth, (iPhoneHeight - 64))];
         tipsLabel.backgroundColor = self.view.backgroundColor;
@@ -89,21 +90,25 @@ static const NSInteger LabelSize = 15;
 
 - (void)willLoadLabels
 {
-    if (_type == SecondSituationDefaultLoadType)
+    if (_type == SecondSituationLoadDefaultType)
     {
         [self loadAllLabels];
     }
-    else if (_type == SecondSituationNextLoopLoadType)
+    else if (_type == SecondSituationLoadNextLoopType)
     {
         dispatch_async(dispatch_get_main_queue(), ^{
             
             [self loadAllLabels];
         });
     }
-    else if (_type == SecondSituationTimerLoadType)
+    else if (_type == SecondSituationLoadTimerType)
     {
         timer = [CADisplayLink displayLinkWithTarget:self selector:@selector(timerAction:)];
         [timer addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+    }
+    else if (_type == SecondSituationLoadGCDType)
+    {
+        [self dispatchTaskAction];
     }
 }
 
@@ -154,6 +159,22 @@ static const NSInteger LabelSize = 15;
     }
 }
 
+#pragma mark Dispatch Task Action
+- (void)dispatchTaskAction
+{
+    [self loadLabelsWithIndex:timerIndex];
+    
+    timerIndex++;
+    
+    if (timerIndex < verticalCount)
+    {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            [self dispatchTaskAction];
+        });
+    }
+}
+
 #pragma mark Back
 - (void)navigationPop:(UIButton *)sender
 {
@@ -163,7 +184,6 @@ static const NSInteger LabelSize = 15;
 }
 
 @end
-
 
 
 
