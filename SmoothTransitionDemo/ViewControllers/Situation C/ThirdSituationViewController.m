@@ -11,8 +11,6 @@
 @interface ThirdSituationViewController ()
 {
     UILabel *tipsLabel;
-    
-    BOOL didLoad;
 }
 
 @property (nonatomic, assign) ThirdSituationLoadType type;
@@ -80,15 +78,12 @@
         tipsLabel.text = @"Waiting...";
         [self.view addSubview:tipsLabel];
         
-        if (_type == ThirdSituationLoadSnapshotType)
-        {
-            dispatch_async(dispatch_get_main_queue(), ^{
-               
-                [self loadRoundViews];
-                
-                self.snapshotView.hidden = NO;
-            });
-        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            [self loadRoundViews];
+            
+            self.snapshotView.hidden = NO;
+        });
     }
 }
 
@@ -113,8 +108,6 @@
         subLabel.text = [NSString stringWithFormat:@"%d", i + 1];
         [self.view addSubview:subLabel];
     }
-    
-    didLoad = YES;
 }
 
 #pragma mark - Action
