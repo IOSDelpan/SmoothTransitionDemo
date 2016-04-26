@@ -26,7 +26,7 @@
 		1889C9361C9959860055881E /* left@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1889C9341C9959860055881E /* left@3x.png */; };
 		189E44321C9F86CC00F8E1D2 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 189E44311C9F86CC00F8E1D2 /* Launch Screen.xib */; };
 		18C433A41C9A5CC300B99262 /* SecondSituationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C433A31C9A5CC300B99262 /* SecondSituationViewController.m */; };
-		32C7CA781CCF4534009E6687 /* ThirdSituationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C7CA771CCF4534009E6687 /* ThirdSituationViewController.m */; };
+		32C7CA801CCF4930009E6687 /* ThirdSituationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C7CA7F1CCF4930009E6687 /* ThirdSituationViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,8 +67,8 @@
 		189E44311C9F86CC00F8E1D2 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 		18C433A21C9A5CC300B99262 /* SecondSituationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondSituationViewController.h; sourceTree = "<group>"; };
 		18C433A31C9A5CC300B99262 /* SecondSituationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondSituationViewController.m; sourceTree = "<group>"; };
-		32C7CA761CCF4534009E6687 /* ThirdSituationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ThirdSituationViewController.h; path = "../../../../../../../Volumes/NO NAME/SmoothTransitionDemo/SmoothTransitionDemo/ViewControllers/Situation C/ThirdSituationViewController.h"; sourceTree = "<group>"; };
-		32C7CA771CCF4534009E6687 /* ThirdSituationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ThirdSituationViewController.m; path = "../../../../../../../Volumes/NO NAME/SmoothTransitionDemo/SmoothTransitionDemo/ViewControllers/Situation C/ThirdSituationViewController.m"; sourceTree = "<group>"; };
+		32C7CA7E1CCF4930009E6687 /* ThirdSituationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdSituationViewController.h; sourceTree = "<group>"; };
+		32C7CA7F1CCF4930009E6687 /* ThirdSituationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdSituationViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,7 +173,7 @@
 				1889C9241C9938600055881E /* CommonViewControllers */,
 				1889C91E1C9935950055881E /* Situation A */,
 				1889C91F1C9935950055881E /* Situation B */,
-				1889C9201C9935950055881E /* Situation C */,
+				32C7CA7D1CCF4930009E6687 /* Situation C */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -194,15 +194,6 @@
 				18C433A31C9A5CC300B99262 /* SecondSituationViewController.m */,
 			);
 			path = "Situation B";
-			sourceTree = "<group>";
-		};
-		1889C9201C9935950055881E /* Situation C */ = {
-			isa = PBXGroup;
-			children = (
-				32C7CA761CCF4534009E6687 /* ThirdSituationViewController.h */,
-				32C7CA771CCF4534009E6687 /* ThirdSituationViewController.m */,
-			);
-			path = "Situation C";
 			sourceTree = "<group>";
 		};
 		1889C9241C9938600055881E /* CommonViewControllers */ = {
@@ -232,6 +223,15 @@
 				1889C9341C9959860055881E /* left@3x.png */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		32C7CA7D1CCF4930009E6687 /* Situation C */ = {
+			isa = PBXGroup;
+			children = (
+				32C7CA7E1CCF4930009E6687 /* ThirdSituationViewController.h */,
+				32C7CA7F1CCF4930009E6687 /* ThirdSituationViewController.m */,
+			);
+			path = "Situation C";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,7 +335,7 @@
 				1889C9271C9938600055881E /* CatalogViewController.m in Sources */,
 				1889C92D1C99587D0055881E /* FirstSituationViewController.m in Sources */,
 				1889C9311C9958FA0055881E /* AppDelegate.m in Sources */,
-				32C7CA781CCF4534009E6687 /* ThirdSituationViewController.m in Sources */,
+				32C7CA801CCF4930009E6687 /* ThirdSituationViewController.m in Sources */,
 				18C433A41C9A5CC300B99262 /* SecondSituationViewController.m in Sources */,
 				1889C92A1C9938B90055881E /* RootNavigationController.m in Sources */,
 				186036921C99325E008EE6BB /* main.m in Sources */,
